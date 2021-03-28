@@ -1,29 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ asset('site/css/bootstrap.css') }}">
-    <title>Document</title>
-</head>
-<body>
+@extends('templates/app')
+@section('content')
+  <h3>Vendas Efetuadas</h3>
 
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="{{ route('home') }}">Home</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="{{ route('home') }}">Vendas Efetuadas <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="{{ route('new-sale') }}">Nova venda</a>
-              </div>
-            </div>
-          </nav>
-    </header>
+  <table class="table">
+    <tr>
+      <th>Código da venda</th>
+      <th>Valor total</th>
+      <th>Data da Venda</th>
+      <th>Data de Entrega</th>
+    </tr>
 
-    <script src="{{ asset('site/js/jquery.js') }}"></script>
-</body>
-</html>
+    <tr>
+      <td>1</td>
+      <td>R$ 100,00</td>
+      <td>27/03/2021</td>
+      <td>27/03/2021</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>R$ 100,00</td>
+      <td>27/03/2021</td>
+      <td>27/03/2021</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>R$ 100,00</td>
+      <td>27/03/2021</td>
+      <td>27/03/2021</td>
+    </tr>
+
+  </table>
+
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+  </nav>
+
+@endsection
+
+@section('scripts')
+<script src="{{ url(mix('site/js/jquery.js'))}}"></script>
+<script src="{{ url(mix('site/js/bootstrap.js')) }}"></script>
+@endsection

@@ -1,4 +1,7 @@
 {
-    "/site/js/jquery.js": "/site/js/jquery.js",
-    "/site/css/bootstrap.css": "/site/css/bootstrap.css"
+    "/site/css/bootstrap.css": "/site/css/bootstrap.css?id=f7c432bcde857470d9b0",
+    "/site/js/scripts.js": "/site/js/scripts.js?id=e0fdaeaf257d80e0c9ce",
+    "/site/js/bootstrap.js": "/site/js/bootstrap.js?id=01dce07671c51d0027f5",
+    "/site/js/jquery.js": "/site/js/jquery.js?id=2849239b95f5a9a2aea3",
+    "/site/js/axios.js": "/site/js/axios.js?id=51aebc106301215d32e1"
 }
