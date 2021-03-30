@@ -1,5 +1,3 @@
-const cep = document.querySelector('#cep');
-
 cep.addEventListener('focusout', async (event) => {
 
     const verifyFormat = RegExp('\\d{8}');

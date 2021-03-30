@@ -15,7 +15,14 @@ let productionSourceMaps = false;
 mix
 
     // Javascript add
-    .scripts('resources/js/script.js','public/site/js/scripts.js')
+    .scripts([
+        'resources/js/variables.js',
+        'resources/js/ajaxCEP.js',
+        'resources/js/ajaxName.js',
+        'resources/js/ajaxRef.js',
+        'resources/js/ajaxAdd.js',
+        'resources/js/ajaxRemove.js',
+    ],'public/site/js/ajax.js')
     .scripts('node_modules/bootstrap/dist/js/bootstrap.js','public/site/js/bootstrap.js').sourceMaps(productionSourceMaps, 'source-map')
     .scripts('node_modules/jquery/dist/jquery.js','public/site/js/jquery.js')
     .scripts('node_modules/axios/dist/axios.js','public/site/js/axios.js').sourceMaps(productionSourceMaps, 'source-map')

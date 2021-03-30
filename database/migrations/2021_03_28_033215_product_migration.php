@@ -13,7 +13,14 @@ class ProductMigration extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('products', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('name',40);
+            $table->string('cod',40)->unique();
+            $table->decimal('price',11,2);
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+        });
     }
 
     /**
@@ -23,6 +30,6 @@ class ProductMigration extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('products');
     }
 }

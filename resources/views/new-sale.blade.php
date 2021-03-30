@@ -29,31 +29,48 @@
       <h4>Nova Venda - Dados do Produto</h4>
     
       <div class="row">
+
         <div class="col">
           <label for="cep">Nome</label>
-            <input name="Nome" id="Nome" type="text" class="form-control form-control-sm" maxlength="8"/>
-      
-            <label for="ref">Código de Referência</label>
-            <input name="ref" id="ref" type="text" class="form-control form-control-sm"/>
-
-            <hr />
-
-            <p>Entrega: </p>
-
-            <input type="submit" value="Efetuar Venda">
-          
+          <input name="name" id="name" type="text" class="form-control form-control-sm"/>
         </div>
+
+        <div class="col">
+            <label for="ref">Referência</label>
+            <input name="ref" id="ref" type="text" class="form-control form-control-sm"/>
+        </div>
+
+        <div class="col">
+            <p>Entrega: </p>
+        </div>
+        
+        <input type="submit" value="Efetuar Venda">
+          
+        
+      </div>
+
+      <div class="row">
+        <div id="results"></div>
       </div>
 
   </div>
       <div class="col">
         <h4>Listagem de Produtos Inseridos</h4>
-        <table class="table">
+        <table class="table" id="listCart">
           <tr>
             <th>Nome</th>
             <th>Preço</th>
             <th>Fornecedor(es)</th>
+            <th>Remover</th>
           </tr>
+          @foreach($products as $key => $p)
+          <tr>
+            <th>{{$p->name}}</th>
+            <th>{{$p->price}}</th>
+            <th>Fornecedor(es)</th>
+            <th><a href = '#' name='pop' id='{{$key}}'>Remover</a></th>
+          </tr>
+          @endforeach
         </table>
       </div>
     </div>
@@ -81,8 +98,14 @@
 @endsection
 
 @section('scripts')
+  <script>
+    const searchByName = "{{route('search-by-name')}}"
+    const searchByRef = "{{route('search-by-ref')}}"
+    const addProduct = "{{route('add-product')}}"
+    const removeProduct = "{{route('remove-product')}}"
+  </script>
   <script src="{{ url(mix('site/js/jquery.js')) }}"></script>
-  <script src="{{ url(mix('site/js/scripts.js')) }}"></script>
+  <script src="{{ url(mix('site/js/ajax.js')) }}"></script>
   <script src="{{ url(mix('site/js/bootstrap.js')) }}"></script>
   <script src="{{ url(mix('site/js/axios.js')) }}"></script>
 @endsection

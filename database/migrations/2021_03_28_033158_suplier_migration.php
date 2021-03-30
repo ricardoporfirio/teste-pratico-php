@@ -13,7 +13,12 @@ class SuplierMigration extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('supliers', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('name',40);
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+        });
     }
 
     /**
@@ -23,6 +28,6 @@ class SuplierMigration extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('supliers');
     }
 }

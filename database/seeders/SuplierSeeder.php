@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Suplier;
 use Illuminate\Database\Seeder;
 
 class SuplierSeeder extends Seeder
@@ -13,6 +14,6 @@ class SuplierSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Suplier::factory(5)->create();
     }
 }

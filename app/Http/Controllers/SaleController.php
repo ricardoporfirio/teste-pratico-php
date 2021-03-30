@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class SaleController extends Controller
@@ -13,6 +14,26 @@ class SaleController extends Controller
 
     public function newSale(Request $request)
     {
-        return view('new-sale');
+        if(session()->has('cart')) {
+            $products = session()->get('cart');
+        }else {
+            $products = [];
+        }
+        
+        return view('new-sale',[
+            'products' => $products
+        ]);
+    }
+
+
+
+    public function addProduct(Request $request)
+    {
+        # code...
+    }
+
+    public function removeProduct(Request $request)
+    {
+        # code...
     }
 }
